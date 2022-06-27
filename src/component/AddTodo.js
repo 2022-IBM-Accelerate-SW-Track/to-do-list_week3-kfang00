@@ -64,6 +64,7 @@ class AddTodo extends Component {
             variant="outlined"
             onChange={this.handleChange}
             value={this.state.content}
+            style = {{margin: '10px 0px'}}
           />
         </div>
         <LocalizationProvider dateAdapter={AdapterDateFns}>         
@@ -77,10 +78,10 @@ class AddTodo extends Component {
         </LocalizationProvider>
         <div data-testid="new-item-button">
           <Button
-            style={{ marginLeft: "10px" }}
             onClick={this.handleSubmit}
             variant="contained"
             color="primary"
+            style = {{ backgroundColor: "#ffbdda", borderRadius: "10px", margin: "10px"}}
           >
             Add
           </Button>

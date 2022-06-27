@@ -1,6 +1,16 @@
-.split {
+.split_left {
   height: 100%;
-  width: 50%;
+  width: 30%;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  /* overflow-x: hidden; */
+  padding-top: 100px;
+}
+
+.split_right {
+  height: 100%;
+  width: 70%;
   position: fixed;
   z-index: -1;
   top: 0;
@@ -10,7 +20,7 @@
 
 .left {
   left: 0;
-  background-color: #0f62fe;
+  background-color: #ffd2e6;
 }
 
 .right {
@@ -25,18 +35,29 @@
   text-align: centers;
 }
 
+.about_header {
+  color: rgb(255, 210, 230);
+  font-weight: 400;
+  font-size: 2em;
+  letter-spacing: 0.05em;
+}
+
 .name_title {
   font-size: 48px;
-  color: black;
-  text-align: left;
+  color: rgb(57, 57, 57);
+  /* text-align: left; */
   padding-bottom: 20px;
+  letter-spacing: 0.05em;
 }
 
 .brief_description {
-  text-align: left;
+  /* text-align: left; */
 }
 
 .profile_image {
-  width: 500px;
+  width: 350px;
   height: auto;
+  border-radius: 30px;
+  position: relative;
+  left: 80px;
 }

@@ -100,6 +100,6 @@ afterEach(() => {
   fireEvent.click(addButton);
   const pastColor = screen.getByTestId(/Please swiffer the floor!/i).style.background;
   const futureColor = screen.getByTestId(/Finish my homework/i).style.background;
-  expect(pastColor).toBe('red');
+  expect(pastColor).toBe('rgb(255, 140, 190)');
   expect(futureColor).toBe('white');
  });
