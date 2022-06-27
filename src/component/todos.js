@@ -12,7 +12,7 @@ import { Card, Grid, ListItemButton, ListItemText, Checkbox} from "@mui/material
 const Todos = ({ todos, deleteTodo }) => {
   const todoList = todos.length ? (
     todos.map((todo) => {
-      const color = (new Date(todo.due) < new Date()) ? "red" : "#ffffffff"
+      const color = (new Date(todo.due) < new Date()) ? "red" : "white"
       return (
         <Grid key={todo.id}>
           <Card style={{marginTop:10, backgroundColor: color}} data-testid={todo.content}>

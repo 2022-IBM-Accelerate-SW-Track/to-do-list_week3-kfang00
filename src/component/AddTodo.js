@@ -25,7 +25,11 @@ class AddTodo extends Component {
 
   handleDueChange = (event) => {
     this.setState({
-      due : new Date(event).toLocaleDateString()
+      due : new Date(event).toLocaleDateString("en-US", { 
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+      })
     });
   };
 
@@ -54,12 +58,14 @@ class AddTodo extends Component {
       // an OnClick event.
       // 4. The value of the text field also should reflect the local state of this component.
       <div>
-        <TextField
-          label="Add New Item"
-          variant="outlined"
-          onChange={this.handleChange}
-          value={this.state.content}
-        />
+        <div data-testid="new-item-input">
+          <TextField
+            label="Add New Item"
+            variant="outlined"
+            onChange={this.handleChange}
+            value={this.state.content}
+          />
+        </div>
         <LocalizationProvider dateAdapter={AdapterDateFns}>         
           <DesktopDatePicker
               id="new-item-date"
@@ -69,14 +75,16 @@ class AddTodo extends Component {
               renderInput={(params) => <TextField {...params} />}
           />
         </LocalizationProvider>
-        <Button
-          style={{ marginLeft: "10px" }}
-          onClick={this.handleSubmit}
-          variant="contained"
-          color="primary"
-        >
-          Add
-        </Button>
+        <div data-testid="new-item-button">
+          <Button
+            style={{ marginLeft: "10px" }}
+            onClick={this.handleSubmit}
+            variant="contained"
+            color="primary"
+          >
+            Add
+          </Button>
+        </div>
       </div>
     );
   }
